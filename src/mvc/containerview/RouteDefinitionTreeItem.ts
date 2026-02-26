@@ -15,6 +15,7 @@ export class RouteDefinitionTreeItem extends AbstractContainerTreeItem {
         this._displayPath = displayPath
     }
 
+    // @ts-ignore
     get tooltip() {
         return this._routeDefinition.path + " [" + this._routeDefinition.method + "]"
     }

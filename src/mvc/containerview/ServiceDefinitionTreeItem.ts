@@ -15,6 +15,7 @@ export class ServiceDefinitionTreeItem extends AbstractContainerTreeItem {
         this._displayClass = displayClass
     }
 
+    // @ts-ignore
     get tooltip(): string {
         return this.serviceDefinition.className
     }
@@ -36,6 +37,7 @@ export class ServiceDefinitionTreeItem extends AbstractContainerTreeItem {
         return children
     }
 
+    // @ts-ignore
     get contextValue(): string {
         return 'symfony-vscode.service'
     }

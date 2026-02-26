@@ -9,10 +9,12 @@ export class ConfigurationFileServiceCompletionItem extends vscode.CompletionIte
         this._serviceDefinition = serviceDefinition
     }
 
+    // @ts-ignore
     public get detail(): string {
         return this._serviceDefinition.id
     }
 
+    // @ts-ignore
     public get documentation(): string {
         return "Of class " + this._serviceDefinition.className
     }

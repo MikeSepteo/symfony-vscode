@@ -12,6 +12,7 @@ export class ParameterTreeItem extends AbstractContainerTreeItem {
         this._parameter = parameter
     }
 
+    // @ts-ignore
     get tooltip() {
         return this._parameter.value
     }

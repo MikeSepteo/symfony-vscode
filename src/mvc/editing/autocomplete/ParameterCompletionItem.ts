@@ -9,10 +9,12 @@ export class ParameterCompletionItem extends vscode.CompletionItem {
         this.parameter = parameter
     }
 
+    // @ts-ignore
     public get detail(): string {
         return this.parameter.name
     }
 
+    // @ts-ignore
     public get documentation(): string {
         return "Of value : " + this.parameter.value
     }

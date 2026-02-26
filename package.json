@@ -2,10 +2,10 @@
     "name": "symfony-vscode",
     "displayName": "Symfony for VSCode",
     "description": "Debug and autocomplete of Symfony container",
-    "version": "1.0.2",
-    "publisher": "TheNouillet",
+    "version": "1.0.3",
+    "publisher": "MikeSepteo",
     "repository": {
-        "url": "https://github.com/TheNouillet/symfony-vscode"
+        "url": "https://github.com/MikeSepteo/symfony-vscode"
     },
     "engines": {
         "vscode": "^1.25.0"
@@ -291,18 +291,19 @@
         "vscode:prepublish": "npm run compile",
         "compile": "tsc -p ./",
         "watch": "tsc -watch -p ./",
-        "postinstall": "node ./node_modules/vscode/bin/install",
+        "postinstall": "node ./node_modules/.bin/vscode-install",
         "test": "npm run compile && node ./node_modules/vscode/bin/test"
     },
     "devDependencies": {
-        "@types/mocha": "^2.2.42",
-        "@types/node": "^7.0.43",
-        "typescript": "^2.6.1",
+        "@types/mocha": "^10.0.10",
+        "@types/node": "^25.3.1",
+        "@vscode/vsce": "^3.7.1",
+        "typescript": "^5.9.3",
         "vscode": "^1.1.6"
     },
     "dependencies": {
         "graceful-fs": "^4.1.15",
-        "strip-json-comments": "^2.0.1",
-        "php-parser": "^3.0.0-prerelease.7"
+        "php-parser": "^3.4.0",
+        "strip-json-comments": "^5.0.3"
     }
 }

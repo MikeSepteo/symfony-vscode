@@ -1,6 +1,6 @@
 import * as vscode from "vscode"
 import * as fs from "graceful-fs"
-import * as stripJsonComments from "strip-json-comments";
+import stripJsonComments from "strip-json-comments";
 
 export class ComposerJSON {
 

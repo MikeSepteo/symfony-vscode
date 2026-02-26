@@ -1,5 +1,10 @@
 # Change Log
 
+## 1.0.3 [02-26-2026]
+* Updated dependencies
+* Added support for Symfony 6.4 and 7.0
+
+* Fixed the extension not starting at all
 ## 1.0.2 [02-27-2019]
 
 * Fixed the extension not starting at all

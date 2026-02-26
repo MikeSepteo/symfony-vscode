@@ -1,7 +1,7 @@
 import * as vscode from "vscode"
 import { PHPClassProviderInterface } from "./PHPClassProviderInterface"
 import { PHPClass } from "../PHPClass"
-import engine from 'php-parser'
+import {Engine} from 'php-parser'
 import { readFile } from "graceful-fs";
 import { PromiseUtils } from "../PromiseUtils";
 import { PHPUse } from "../PHPUse";
@@ -40,11 +40,11 @@ interface PHPParser_Position {
 
 export class ParserPHPClassProvider implements PHPClassProviderInterface {
 
-    protected _engine: PHPParser
+    protected _engine: Engine
     protected _configuration = vscode.workspace.getConfiguration("symfony-vscode")
 
     constructor() {
-        this._engine = new engine({
+        this._engine = new Engine({
             parser: {
                 php7: true
             },
@@ -92,7 +92,7 @@ export class ParserPHPClassProvider implements PHPClassProviderInterface {
                     resolve([])
                 } else {
                     try {
-                        let ast = this._engine.parseCode(data.toString())
+                        let ast = this._engine.parseCode(data.toString(), uri.fsPath)
                         resolve(this._hydratePHPClass(ast, uri))
                     } catch(e) {
                         resolve([])

@@ -1,6 +1,6 @@
 import * as vscode from "vscode"
 import * as path from "path"
-import * as jsonStripComments from "strip-json-comments"
+import jsonStripComments from "strip-json-comments"
 
 import { ContainerProviderInterface } from "./ContainerProviderInterface";
 import { ServiceDefinition } from "../ServiceDefinition";
@@ -27,7 +27,7 @@ export class ConsoleContainerProvider implements ContainerProviderInterface {
     }
 
     provideServiceDefinitions(): Promise<ServiceDefinition[]> {
-        return this._executeCommand<ServiceDefinition>(["debug:container", "--show-private"], (obj) => {
+        return this._executeCommand<ServiceDefinition>(["debug:container", "--show-hidden"], (obj) => {
             let result: ServiceDefinition[] = []
             let collection: Object = {}
 
